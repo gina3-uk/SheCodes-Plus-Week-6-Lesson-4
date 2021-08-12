@@ -70,3 +70,7 @@ h3 {
 #currentLocationLow {
   font-size: 12px;
 }
+
+#openSourceComment {
+  text-align: center;
+}
