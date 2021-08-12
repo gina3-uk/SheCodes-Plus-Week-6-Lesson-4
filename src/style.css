@@ -1,0 +1,72 @@
+.weather {
+  background-color: #f1e4dd;
+  padding: 10px 25px;
+  max-width: 900px;
+  border: 3px solid grey;
+  box-shadow: 9px 9px 5px grey;
+  display: block;
+  margin: 20px auto;
+}
+
+body {
+  font-family: "Josefin Slab", serif;
+  color: #71888e;
+}
+
+h1 {
+  color: #71888e;
+  text-align: center;
+  font-family: "Amatic SC", cursive;
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.search-button {
+  background-color: #7fa6ad;
+  border: 1px solid #7fa6ad;
+  transition: all 200ms ease-in-out;
+}
+
+.search-button:hover {
+  cursor: pointer;
+  background-color: #71888e;
+  border: 1px solid #71888e;
+}
+
+.current-button {
+  background-color: #f6b9a4;
+  border: 1px solid #f6b9a4;
+  transition: all 200ms ease-in-out;
+}
+
+.current-button:hover {
+  cursor: pointer;
+  background-color: #f4aaa9;
+  border: 1px solid #f4aaa9;
+}
+
+.day-icon {
+  color: #f4aaa9;
+  font-size: 30px;
+}
+
+#celsuis {
+  font-size: 15px;
+}
+
+#fahrenheit {
+  font-size: 15px;
+}
+
+#currentLocationLow {
+  font-size: 12px;
+}
