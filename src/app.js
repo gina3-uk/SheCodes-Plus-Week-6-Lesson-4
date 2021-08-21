@@ -2,29 +2,20 @@ function formattedDateTime() {
   let currentDate = new Date();
   let newDate = document.querySelector("#date");
   let newDateNumber = currentDate.getDate();
-  let indexDays = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  let newDay = indexDays[currentDate.getDay()];
+  let newYear = currentDate.getFullYear();
   let indexMonths = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10",
+    "11",
+    "12",
   ];
   let newMonth = indexMonths[currentDate.getMonth()];
   let hours = currentDate.getHours();
@@ -35,8 +26,7 @@ function formattedDateTime() {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-
-  newDate.innerHTML = `${newDay} ${newDateNumber} ${newMonth}, ${hours}:${minutes}`;
+  newDate.innerHTML = `${newDateNumber}.${newMonth}.${newYear}, ${hours}:${minutes}`;
 }
 
 function searchCity(city) {
@@ -78,7 +68,7 @@ function showWeatherData(response) {
     response.data.weather[0].description;
   document.querySelector("#currentLocationWind").innerHTML = `${Math.round(
     response.data.wind.speed
-  )}mph winds`;
+  )}km/h winds`;
   document.querySelector("#currentLocationHumidity").innerHTML = `${Math.round(
     response.data.main.humidity
   )}% humidity`;

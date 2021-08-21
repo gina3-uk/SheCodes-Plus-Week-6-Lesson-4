@@ -26,8 +26,23 @@ h2 {
 }
 
 h3 {
+  font-size: 15px;
+  font-weight: light;
+}
+
+sup {
+  position: relative;
+  top: -15px;
+}
+
+#date {
   font-size: 20px;
   font-weight: bold;
+}
+
+#currentTemp {
+  font-weight: bold;
+  font-size: 35px;
 }
 
 .search-button {
@@ -60,11 +75,11 @@ h3 {
 }
 
 #celsuis {
-  font-size: 15px;
+  font-size: 12px;
 }
 
 #fahrenheit {
-  font-size: 15px;
+  font-size: 12px;
 }
 
 #currentLocationLow {
