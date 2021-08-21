@@ -1,3 +1,7 @@
+let celsiusTemperature = null;
+let celsiusTemperatureMax = null;
+let celsiusTemperatureMin = null;
+
 function formattedDateTime() {
   let currentDate = new Date();
   let newDate = document.querySelector("#date");
@@ -79,6 +83,44 @@ function showWeatherData(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  celsiusTemperature = response.data.main.temp;
+  celsiusTemperatureMax = response.data.main.temp_max;
+  celsiusTemperatureMin = response.data.main.temp_min;
+}
+
+function toFahrenheit(event) {
+  event.preventDefault;
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  document.querySelector("#currentTemp").innerHTML = Math.round(
+    fahrenheitTemperature
+  );
+
+  let fahrenheitTemperatureMax = (celsiusTemperatureMax * 9) / 5 + 32;
+  document.querySelector("#currentLocationHigh").innerHTML = `${Math.round(
+    fahrenheitTemperatureMax
+  )}°F`;
+
+  let fahrenheitTemperatureMin = (celsiusTemperatureMin * 9) / 5 + 32;
+  document.querySelector("#currentLocationLow").innerHTML = `${Math.round(
+    fahrenheitTemperatureMin
+  )}°F`;
+}
+
+function toCelsius(event) {
+  event.preventDefault;
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  document.querySelector("#currentTemp").innerHTML =
+    Math.round(celsiusTemperature);
+  document.querySelector("#currentLocationHigh").innerHTML = `${Math.round(
+    celsiusTemperatureMax
+  )}°C`;
+  document.querySelector("#currentLocationLow").innerHTML = `${Math.round(
+    celsiusTemperatureMin
+  )}°C`;
 }
 
 let button = document.querySelector("#searchCurrentLocation");
@@ -87,21 +129,11 @@ button.addEventListener("click", getCurrentLocation);
 let cityForm = document.querySelector("#citySearch");
 cityForm.addEventListener("submit", handleSubmit);
 
+let fahrenheitLink = document.querySelector("#fahrenheitLink");
+fahrenheitLink.addEventListener("click", toFahrenheit);
+
+let celsiusLink = document.querySelector("#celsiusLink");
+celsiusLink.addEventListener("click", toCelsius);
+
 formattedDateTime();
 searchCity("Cambridge,UK");
-
-//function toCelsuis(event) {
-//  event.preventDefault();
-//  let changeCelsuis = document.querySelector("#currentTemp");
-//  changeCelsuis.innerHTML = "23";
-//}
-//let celsuis = document.querySelector("#celsuis");
-//celsuis.addEventListener("click", toCelsuis);
-
-//function toFahrenheit(event) {
-//  event.preventDefault();
-//  let changeFahreneheit = document.querySelector("#currentTemp");
-//  changeFahreneheit.innerHTML = "<em>74</em>";
-//}
-//let fahrenheit = document.querySelector("#fahrenheit");
-//fahrenheit.addEventListener("click", toFahrenheit);

@@ -32,7 +32,7 @@ h3 {
 
 h4 {
   text-align: right;
-  padding: 0 40px 0 0;
+  padding: 0 60px 0 0;
 }
 
 #weatherDescriptionElement {
@@ -88,12 +88,20 @@ sup {
   font-size: 30px;
 }
 
-#celsuis {
+sup {
   font-size: 12px;
 }
 
-#fahrenheit {
+.active {
   font-size: 12px;
+  color: #71888e;
+  cursor: default;
+}
+
+.active:hover {
+  text-decoration: none;
+  color: #71888e;
+  cursor: default;
 }
 
 #currentLocationLow {
