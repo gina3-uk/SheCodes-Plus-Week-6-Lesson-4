@@ -74,26 +74,30 @@
     <div class="card text-center">
     <div class="card-body">
 
-        <div class="row">
+<div class="row">
             <div class="col-12">
                 <h2><i class="fas fa-map-marker-alt location-icon-head"></i> <span id="cityDisplay"></span></h2>
                 <h3>Last updated: <span id="date"></span></h3>
-                <h4><span id="currentTemp">23</span> <sup id="celsuis"><a href="#">°C</a> /</sup><sup id="fahrenheit"><a href="#"> °F</a></sup></h4>
-            </div>
+                </div>
+
+        <div class="col-6">
+          <h4><span id="currentTemp"></span> <sup id="celsuis"><a href="#">°C</a> /</sup><sup id="fahrenheit"><a href="#"> °F</a></sup></h4>
         </div>
+        <div class="col-6" id="weatherDescriptionElement">
+          <img src="" alt="weather icon" id="weatherIconDisplay"/> <span id="currentLocationDescription"></span>
+        </div>
+</div>
 
         <div class="row">
-            <div class="col-3">
-                <i class="fas fa-temperature-high"></i> <span id="currentLocationHigh">23°C</span> /<span id="currentLocationLow">14°C</span>
+            <div class="col-4">
+                <i class="fas fa-temperature-high"></i> <span id="currentLocationHigh"></span> /<span id="currentLocationLow"></span>
             </div>
-            <div class="col-3">
-                <i class="fas fa-sun"></i> <span id="currentLocationDescription">Sunny</span>
+           
+            <div class="col-4">
+                <i class="fas fa-wind"></i><span id="currentLocationWind"></span>
             </div>
-            <div class="col-3">
-                <i class="fas fa-wind"></i><span id="currentLocationWind"> 4mph winds</span>
-            </div>
-            <div class="col-3">
-                <i class="fas fa-tint"></i> <span id="currentLocationHumidity">30% humidity</span>
+            <div class="col-4">
+                <i class="fas fa-tint"></i> <span id="currentLocationHumidity"></span>
             </div>
         </div>
 

@@ -72,6 +72,13 @@ function showWeatherData(response) {
   document.querySelector("#currentLocationHumidity").innerHTML = `${Math.round(
     response.data.main.humidity
   )}% humidity`;
+
+  let iconElement = document.querySelector("#weatherIconDisplay");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 let button = document.querySelector("#searchCurrentLocation");
