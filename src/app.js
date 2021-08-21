@@ -75,7 +75,7 @@ function showWeatherData(response) {
     response.data.main.temp_min
   )}°C`;
   document.querySelector("#currentLocationDescription").innerHTML =
-    response.data.weather[0].main;
+    response.data.weather[0].description;
   document.querySelector("#currentLocationWind").innerHTML = `${Math.round(
     response.data.wind.speed
   )}mph winds`;
