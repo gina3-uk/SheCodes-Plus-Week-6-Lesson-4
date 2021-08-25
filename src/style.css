@@ -115,3 +115,16 @@ sup {
 #openSourceComment {
   text-align: center;
 }
+
+.forecast-day {
+  font-size: 15px;
+  font-weight: light;
+}
+
+.forecast-temperature-maximum {
+  font-weight: bolder;
+}
+
+.forecast-temperature-minimum {
+  font-weight: lighter;
+}
