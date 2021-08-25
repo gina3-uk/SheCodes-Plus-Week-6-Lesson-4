@@ -37,94 +37,78 @@
             </div>
           </div>
 
-          <br />
+<br />
 
-          <div class="row g-3">
-            <div class="col-sm-7">
-                <form id="citySearch">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Enter city here"
-                autofocus
-                id="citySearchType"
-              />
-            </div>
-            <div class="col-sm">
-              <input
-                type="submit"
-                class="form-control search-button"
-                value="Search"
-                id = "citySearchSubmit"
-              />
-            </div>
-            <div class="col-sm">
-              <input
-                type="button"
-                class="form-control current-button"
-                value="Current"
-                id = "searchCurrentLocation"
-              />
-              </form>
-            </div>
-          </div>
-
-          <br />
-
-    <div class="card text-center">
-    <div class="card-body">
-
-<div class="row">
-            <div class="col-12">
-                <h2><i class="fas fa-map-marker-alt location-icon-head"></i> <span id="cityDisplay"></span></h2>
-                <h3>Last updated: <span id="date"></span></h3>
-                </div>
-
-        <div class="col-6">
-          <h4><span id="currentTemp"></span> <sup><a href="#" style="text-decoration:none;" id="celsiusLink" class="active">°C</a> / <a href="#" id="fahrenheitLink" style="text-decoration:none;">°F</a></sup></h4>
-        </div>
-        <div class="col-6" id="weatherDescriptionElement">
-          <img src="" alt="weather icon" id="weatherIconDisplay"/> <span id="currentLocationDescription"></span>
-        </div>
+<div class="row g-3">
+  <div class="col-sm-7">
+    <form id="citySearch">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter city here"
+        autofocus
+        id="citySearchType"
+      />
+  </div>
+  <div class="col-sm">
+    <input
+      type="submit"
+      class="form-control search-button"
+      value="Search"
+      id = "citySearchSubmit"
+    />
+  </div>
+  <div class="col-sm">
+    <input
+      type="button"
+      class="form-control current-button"
+      value="Current"
+      id = "searchCurrentLocation"
+    />
+</form>
+</div>
 </div>
 
-        <div class="row">
-            <div class="col-4">
-                <i class="fas fa-temperature-high"></i> <span id="currentLocationHigh"></span> /<span id="currentLocationLow"></span>
-            </div>
-           
-            <div class="col-4">
-                <i class="fas fa-wind"></i><span id="currentLocationWind"></span>
-            </div>
-            <div class="col-4">
-                <i class="fas fa-tint"></i> <span id="currentLocationHumidity"></span>
-            </div>
-        </div>
+<br />
 
-<div class="weather-forecast">Weather forecast
-  <div class="row">
-    <div class="col-2">
-      <div class="card">
-        <div class="card-body">
-          <div class="forecast-day">Mon</div>
-            <div class="forecast-temperature"><span class="forecast-temperature-maximum">21°C</span> / <span class="forecast-temperature-minimum">9°C</span></div>
-              <img src="http://openweathermap.org/img/wn/04d@2x.png" width=50px>
-        </div>
-      </div>
-    </div>
+<div class="card text-center">
+<div class="card-body">
+
+<div class="row">
+  <div class="col-12">
+    <h2><i class="fas fa-map-marker-alt location-icon-head"></i> <span id="cityDisplay"></span></h2>
+      <h3>Last updated: <span id="date"></span></h3>
+  </div>
+
+  <div class="col-6">
+    <h4><span id="currentTemp"></span> <sup><a href="#" style="text-decoration:none;" id="celsiusLink" class="active">°C</a> / <a href="#" id="fahrenheitLink" style="text-decoration:none;">°F</a></sup></h4>
+  </div>
+  <div class="col-6" id="weatherDescriptionElement">
+    <img src="" alt="weather icon" id="weatherIconDisplay"/> <span id="currentLocationDescription"></span>
   </div>
 </div>
 
+<div class="row">
+  <div class="col-4">
+    <i class="fas fa-temperature-high"></i> <span id="currentLocationHigh"></span> /<span id="currentLocationLow"></span>
+  </div>
+  <div class="col-4">
+    <i class="fas fa-wind"></i><span id="currentLocationWind"></span>
+  </div>
+  <div class="col-4">
+    <i class="fas fa-tint"></i> <span id="currentLocationHumidity"></span>
+  </div>
+</div>
+</br>
+<div class="weather-forecast" id="forecast">
+</div>
               </div>
             </div>
           </div>
         </div>
-        
-            <p id="openSourceComment"><a href="https://github.com/gina3-uk/SheCodes-Plus-Week-6-Lesson-4" target="_blank">Open-source code</a> by Gina Lewis</p>
+<p id="openSourceComment"><a href="https://github.com/gina3-uk/SheCodes-Plus-Week-6-Lesson-4" target="_blank">Open-source code</a> by Gina Lewis</p>
       </div>
     </div>
-
-
-    <script src="src/app.js"></script>
-  </body>
+<script src="src/app.js"></script>
+</body>
 </html>

@@ -123,6 +123,27 @@ function toCelsius(event) {
   )}°C`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+
+  let days = ["Thurs", "Fri", "Sat", "Sun"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2">
+      <div class="card">
+        <div class="card-body">
+          <div class="forecast-day">${day}</div>
+            <div class="forecast-temperature"><span class="forecast-temperature-maximum">21°C</span> / <span class="forecast-temperature-minimum">9°C</span></div>
+              <img src="http://openweathermap.org/img/wn/04d@2x.png" width=50px>
+        </div>
+      </div>
+    </div>`;
+  });
+  forecastElement.innerHTML = forecastHTML;
+}
+
 let button = document.querySelector("#searchCurrentLocation");
 button.addEventListener("click", getCurrentLocation);
 
@@ -137,3 +158,4 @@ celsiusLink.addEventListener("click", toCelsius);
 
 formattedDateTime();
 searchCity("Cambridge,UK");
+displayForecast();
