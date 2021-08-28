@@ -78,8 +78,8 @@ function showWeatherData(response) {
   document.querySelector("#currentLocationDescription").innerHTML =
     response.data.weather[0].description;
   document.querySelector("#currentLocationWind").innerHTML = `${Math.round(
-    response.data.wind.speed
-  )}km/h winds`;
+    response.data.wind.speed * 2.237
+  )}mph winds`;
   document.querySelector("#currentLocationHumidity").innerHTML = `${Math.round(
     response.data.main.humidity
   )}% humidity`;
