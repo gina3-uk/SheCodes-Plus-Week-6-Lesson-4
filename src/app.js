@@ -33,6 +33,13 @@ function formattedDateTime() {
   newDate.innerHTML = `${newDateNumber}.${newMonth}.${newYear}, ${hours}:${minutes}`;
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
 function searchCity(city) {
   let apiKey = "ac730adc7d8efa5c2d9bf7cf3f38ab81";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -130,23 +137,31 @@ function toCelsius(event) {
 }
 
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
 
   let days = ["Thurs", "Fri", "Sat", "Sun"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col-2">
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-2">
       <div class="card">
         <div class="card-body">
-          <div class="forecast-day">${day}</div>
-            <div class="forecast-temperature"><span class="forecast-temperature-maximum">21°C</span> / <span class="forecast-temperature-minimum">9°C</span></div>
-              <img src="http://openweathermap.org/img/wn/04d@2x.png" width=50px>
+          <div class="forecast-day">${formatDay(forecastDay.dt)}</div>
+            <div class="forecast-temperature"><span class="forecast-temperature-maximum">${Math.round(
+              forecastDay.temp.max
+            )}°C</span> / <span class="forecast-temperature-minimum">${Math.round(
+          forecastDay.temp.min
+        )}°C</span></div>
+              <img src="http://openweathermap.org/img/wn/${
+                forecastDay.weather[0].icon
+              }@2x.png" width=50px">
         </div>
       </div>
     </div>`;
+    }
   });
   forecastElement.innerHTML = forecastHTML;
 }
