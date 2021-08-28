@@ -123,8 +123,10 @@ sup {
 
 .forecast-temperature-maximum {
   font-weight: bolder;
+  font-size: 14px;
 }
 
 .forecast-temperature-minimum {
   font-weight: lighter;
+  font-size: 14px;
 }
