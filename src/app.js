@@ -30,7 +30,7 @@ function formattedDateTime() {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  newDate.innerHTML = `${newDateNumber}.${newMonth}.${newYear}, ${hours}:${minutes}`;
+  newDate.innerHTML = `${hours}:${minutes}, ${newDateNumber}.${newMonth}.${newYear}`;
 }
 
 function formatDay(timestamp) {
